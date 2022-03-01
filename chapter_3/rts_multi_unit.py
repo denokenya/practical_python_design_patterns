@@ -64,19 +64,17 @@ class Archer(object):
 
 class Barracks(object):
 
-    def generate_knight(self):
-
-        return Knight(400, 5, 3, 2, "short sword")
-
-    def generate_archer(self):
-
-        return Archer(200, 7, 1, 5, "short bow")
+    def build_unit(self, unit_type, level):
+        if unit_type == "knight":
+            return Knight(level)
+        elif unit_type == "archer":
+            return Archer(level)
 
 
 if __name__ == "__main__":
 
     barracks = Barracks()
-    knight1 = barracks.generate_knight()
-    archer1 = barracks.generate_archer()
+    knight1 = barracks.build_unit("knight", 1)
+    archer1 = barracks.build_unit("archer", 2)
     print("[knight1] {}".format(knight1))
     print("[archer1] {}".format(archer1))

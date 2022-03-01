@@ -32,31 +32,28 @@ class Knight(object):
 
 class Archer(object):
 
-    def __init__(
-        self,
-        life,
-        speed,
-        attack_power,
-        attack_range,
-        weapon
-    ):
+    def __init__(self, level):
         self.unit_type = "Archer"
-        self.life = life
-        self.speed = speed
-        self.attack_power = attack_power
-        self.attack_range = attack_range
-        self.weapon = weapon
+        if level == 1:
+            self.life = 200
+            self.speed = 7
+            self.attack_power = 1
+            self.attack_range = 5
+            self.weapon = "short bow"
+        elif level == 2:
+            self.life = 200
+            self.speed = 7
+            self.attack_power = 3
+            self.attack_range = 10
+            self.weapon = "long bow"
 
     def __str__(self):
 
-        return "Type :{0}\n "\
-            "Life :{1}\n "\
-            "Speed:{2}\n "\
-            "Attack Power:{3}\n"\
-            "Attack Range: {4}\n"\
-            "Weapon: {5}".format(
-
-                self.unit_type,
+        return "Life: {0}\n"\
+            "Speed: {1}\n"\
+            "Attack Power: {2}\n "\
+            "Attack Range:{3}\n "\
+            "Weapon : {4}".format(
                 self.life,
                 self.speed,
                 self.attack_power,
